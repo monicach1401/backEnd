@@ -28,6 +28,7 @@ app.use('/cities',citiesRouter)
 mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log('Connection to Mongo DB established'))
   .catch(err => console.log(err));*/
+  
   mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connection to MongoDB established'))
   .catch(err => console.log(err));

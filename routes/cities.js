@@ -16,4 +16,21 @@ router.get('/all', (req, res) => {
     .catch(err => console.log(err));
 });
 
+/*post new City */
+router.post('/', (req, res) => {
+  const nuevaCiudad = new cityModel({
+    name: req.body.name,
+    country: req.body.country,
+    img:req.body.img
+  });
+
+  nuevaCiudad.save()
+    .then(ciudad => {
+      res.send(ciudad);
+    })
+    .catch(err => {
+      res.status(500).send("Server error");
+    });
+});
+
 module.exports = router 
