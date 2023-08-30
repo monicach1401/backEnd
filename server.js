@@ -3,7 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const db = require('./keys').mongoURI; 
-const citiesRouter = require('./routes/cities');
+const citiesRouter = require('./routes/cities'); // para rutas de cities
+const itineraryRouter=require('./routes/itinerary');// para rutas de itinerarys
 
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(cors());
 // Realizamos una llamada a app.use, pasando dos argumentos: 
 //la ruta de la API y la ruta relativa al archivo donde definiremos nuestros métodos de ruta.
 app.use('/cities',citiesRouter)
+app.use('/itinerary',itineraryRouter)
 
 
 /*segun plataforma 

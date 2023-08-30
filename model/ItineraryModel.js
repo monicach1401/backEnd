@@ -1,8 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const itinerarySchema = new mongoose.Schema({
   title: {
     type: String,
+    required: true
+  }, 
+  duration: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
     required: true
   },
   profilePicture: {
@@ -13,17 +21,12 @@ const itinerarySchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  duration: {
-    type: Number,
-    required: true
-  },
-  price: {
-    type: Number,
-    required: true
-  },
   hashtags: {
     type: [String]
   }
 });
 
-module.exports = mongoose.model('Itinerary', itinerarySchema);
+module.exports = mongoose.model('itinerary', itinerarySchema);
+
+
+
